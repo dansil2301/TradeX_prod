@@ -16,6 +16,8 @@ services:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=prod
+      - TINKOFF_TOKEN=*INSERT URS*
+      - JWT_SECRET=*INSERT URS*
     depends_on:
       database:
         condition: service_healthy
@@ -30,7 +32,7 @@ services:
       - MYSQL_DATABASE=tradex_docker_dev_db
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p1NameDivision88" ]
-      interval: 10s
+      interval: 15s
       timeout: 5s
-      retries: 3
+      retries: 5
 
