@@ -15,9 +15,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_PROFILES_ACTIVE=prod
+      - PROFILE=prod
       - TINKOFF_TOKEN=*INSERT URS*
       - JWT_SECRET=*INSERT URS*
+      - AWS_DB_PASSWORD=*INSERT URS*
     depends_on:
       database:
         condition: service_healthy
